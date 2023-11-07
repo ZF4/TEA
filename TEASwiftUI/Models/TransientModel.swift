@@ -9,7 +9,7 @@ import Foundation
 import VisionKit
 import SwiftUI
 
-class TransientItem: Identifiable, Equatable, ObservableObject {
+class TransientModel: Identifiable, Equatable, ObservableObject {
   var id: UUID { item.id }
   @Published var item: RecognizedItem
     
@@ -28,7 +28,7 @@ class TransientItem: Identifiable, Equatable, ObservableObject {
     }
   }
 
-  static func == (lhs: TransientItem, rhs: TransientItem) -> Bool {
+  static func == (lhs: TransientModel, rhs: TransientModel) -> Bool {
     lhs.id == rhs.id
   }
 
@@ -64,7 +64,7 @@ class TransientItem: Identifiable, Equatable, ObservableObject {
   }
 }
 
-extension TransientItem {
+extension TransientModel {
   var icon: String {
     if isText {
       return "text.bubble"
@@ -74,7 +74,7 @@ extension TransientItem {
   }
 }
 
-extension TransientItem {
+extension TransientModel {
   func toStoredItem() -> StoredItem {
     return StoredItem(
       id: id,
