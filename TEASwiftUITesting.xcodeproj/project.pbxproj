@@ -91,7 +91,6 @@
 				9F1DBA2A2B55DCC400FAB91E /* OnboardingView.swift */,
 				9F6B80CB2A549C8F0061F081 /* VisionView.swift */,
 				9FDFFCB729EDB79100B845EA /* AddToList.swift */,
-				9F3F96602A153FEF00A81341 /* Assets.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +118,7 @@
 				9F999BC029DF3443008CF00A /* TEASwiftUIApp.swift */,
 				9F999BC229DF3443008CF00A /* ContentView.swift */,
 				9FA60C852A97C08F0028D866 /* Extensions.swift */,
+				9F3F96602A153FEF00A81341 /* Assets.xcassets */,
 				9FC0070229E5D80800117A1A /* Models */,
 				9FC0070529E5FF4D00117A1A /* ViewModel */,
 				9F6A9AC729E091A200826796 /* Views */,

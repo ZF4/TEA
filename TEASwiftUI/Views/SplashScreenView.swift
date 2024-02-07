@@ -12,7 +12,7 @@ struct SplashScreenView: View {
     @State private var pulsingAnimation: Bool = false
     var body: some View {
         ZStack {
-            Image("newTea")
+            Image("teaNoBG")
                 .resizable()
                 .frame(width: 250, height: 250)
                 .opacity(pulsingAnimation ? 1.0 : 0.4)
