@@ -122,7 +122,7 @@ struct CardView: View {
             ZStack {
                 if showAddToList {
                     AddToList(showNewScreen: $showAddToList)
-                        .padding(.top, 75)
+                        .padding(.top, 65)
                         .transition(.move(edge: .bottom))
                 }
             }

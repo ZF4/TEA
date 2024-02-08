@@ -5,6 +5,7 @@ struct AddToList: View {
     @EnvironmentObject var visionModel: VisionModel
     @Environment(\.dismiss) var dismiss
     @Binding var showNewScreen: Bool
+    @FocusState private var focusedField: Field?
     
     @State private var showingSheet = false
     @State private var timeSelected = Date()
@@ -19,6 +20,10 @@ struct AddToList: View {
         case task = "Tasks"
         case textSectionOne = "Gratefuls"
         case textSectionTwo = "Rocks"
+    }
+    
+    enum Field: Hashable {
+        case textField
     }
     
     var body: some View {
@@ -46,6 +51,7 @@ struct AddToList: View {
                         .foregroundColor(Color.white)
                         .padding(.leading)
                         .frame(height: 55)
+                        .focused($focusedField, equals: .textField)
                         .cornerRadius(10)
                         .background {
                             RoundedRectangle(cornerRadius: 10, style: .circular)
@@ -85,17 +91,35 @@ struct AddToList: View {
                         }
                     }
                     
-                    Button(action: saveButtonPressed, label: {
-                        Text("Save".uppercased())
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .frame(height: 55)
-                            .frame(maxWidth: .infinity)
-                            .background(newFunc())
-                            .cornerRadius(10)
+                    HStack {
+                        Button(action: {
+                            showNewScreen.toggle()
+                        }, label: {
+                            Text("Back".uppercased())
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .frame(height: 55)
+                                .frame(maxWidth: 100)
+                                .background(Color.yellow)
+                                .cornerRadius(10)
+                            
+                        })
                         
-                    })
-                    .alert(isPresented: $showingAlert, content: getAlert)
+                        Button(action: {
+                            saveButtonPressed(); focusedField = nil
+                        }, label: {
+                            Text("Save".uppercased())
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .frame(height: 55)
+                                .frame(maxWidth: .infinity)
+                                .background(newFunc())
+                                .cornerRadius(10)
+                            
+                        })
+                        .alert(isPresented: $showingAlert, content: getAlert)
+                        
+                    }
                 }
                 .padding(.horizontal, 14)
                 .sheet(isPresented: $showingSheet) {
