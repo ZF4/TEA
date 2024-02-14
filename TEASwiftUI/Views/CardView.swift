@@ -109,7 +109,7 @@ struct CardView: View {
                     Button(action: {
                         showAddToList.toggle()
                     }, label: {
-                        Image(systemName:showAddToList ? "xmark" : "plus")
+                        Image(systemName:showAddToList ? "house" : "plus")
                             .foregroundStyle(.white)
                     })
                     

@@ -93,19 +93,6 @@ struct AddToList: View {
                     
                     HStack {
                         Button(action: {
-                            showNewScreen.toggle()
-                        }, label: {
-                            Text("Back".uppercased())
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .frame(height: 55)
-                                .frame(maxWidth: 100)
-                                .background(Color.yellow)
-                                .cornerRadius(10)
-                            
-                        })
-                        
-                        Button(action: {
                             saveButtonPressed(); focusedField = nil
                         }, label: {
                             Text("Save".uppercased())
