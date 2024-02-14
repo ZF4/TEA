@@ -32,7 +32,7 @@ struct CreditView: View {
                 .padding(.bottom, 5)
                 
                 HStack {
-                    Text("Alandis Seals & David Douglas & Craig Clayton").bold()
+                    Text("Alandis Seals, David Douglas, and Craig Clayton").bold()
                     + Text("- For all of the support.")
                 }
                 .padding(.bottom, 5)
