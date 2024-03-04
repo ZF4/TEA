@@ -26,7 +26,7 @@ struct CreditView: View {
                 
                 HStack {
                     Text("Ed Farm").bold()
-                    + Text("- For the opprotunity to learn and grow.")
+                    + Text("- For the opportunity to learn and grow.")
                     
                 }
                 .padding(.bottom, 5)
